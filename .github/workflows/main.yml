@@ -14,4 +14,5 @@ jobs:
 
     - name: Deploy branch to RRP
       uses: ronaldrpruitt/deploy-action@v1.0.3
-      secrets: inherit
+      secrets: 
+        EDGIO_DEPLOY_TOKEN: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
