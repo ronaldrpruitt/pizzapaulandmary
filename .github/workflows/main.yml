@@ -1,7 +1,7 @@
 name: My Deploy Workflow
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   deploy:
@@ -10,5 +10,5 @@ jobs:
       - name: Deploy to Edgio
         uses: ronaldrpruitt/deploy-action@v1.0.4
         with:
-          branch-name: 'master'
+          branch-name: 'main'
           edgio-deploy-token: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
