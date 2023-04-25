@@ -12,6 +12,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Deploy to RRP
-        uses: ronaldrpruitt/deploy-action@v1.0.3
+        uses: ronaldrpruitt/deploy-action@v1.0.4
         env:
           DEPLOY_TOKEN: ${{ env.DEPLOY_TOKEN }}
