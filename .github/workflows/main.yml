@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Edgio
-        uses: ronaldrpruitt/deploy-action@v1.0.4
+        uses: ronaldrpruitt/deploy-action@v1.0.5
         with:
           branch-name: 'main'
           edgio-deploy-token: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
