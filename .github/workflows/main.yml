@@ -1,4 +1,4 @@
-name: My Workflow
+name: My Deploy Workflow
 on:
   push:
     branches: [master]
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Edgio
-        uses: ronaldrpruitt/deploy-action@v1.0.3
+        uses: ronaldrpruitt/deploy-action@v1.0.4
         with:
           branch-name: 'master'
           edgio-deploy-token: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
