@@ -7,24 +7,16 @@ on:
     branches:
       - main
       - staging
-
-env:
-  DEPLOY_TOKEN: ${{ inputs.edgio_deploy_token }}
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          ref: ${{ github.ref }}
 
       - name: Deploy to Edgio
-        uses: ronaldrpruitt/deploy-action@v1.0.8
+        uses: ronaldrpruitt/deploy-action@v1.0.9
         with:
-          environment: ${{ github.event_name }}
-          branch: ${{ github.ref }}
-          deploy_token: ${{ env.DEPLOY_TOKEN }}
+          deploy_token: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
 
 
