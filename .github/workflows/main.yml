@@ -1,2 +1,16 @@
-- name: Deploy branch to RRP
-  uses: ronaldrpruitt/deploy-action@v1.0.2
+name: My Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy branch to RRP
+      uses: ronaldrpruitt/deploy-action@v1.0.2
