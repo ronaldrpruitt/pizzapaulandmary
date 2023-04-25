@@ -1,17 +1,14 @@
 name: My Workflow
-
 on:
   push:
-    branches: [ main ]
+    branches: [master]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      DEPLOY_TOKEN: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Deploy to RRP
-        uses: ronaldrpruitt/deploy-action@v1.0.4
-        env:
-          DEPLOY_TOKEN: ${{ env.DEPLOY_TOKEN }}
+      - name: Deploy to Edgio
+        uses: ronaldrpruitt/deploy-action@v1.0.3
+        with:
+          branch-name: 'master'
+          edgio-deploy-token: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
