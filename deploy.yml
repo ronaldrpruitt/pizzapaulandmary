@@ -1,0 +1,2 @@
+- name: Deploy branch to RRP
+  uses: ronaldrpruitt/deploy-action@v1.0.2
