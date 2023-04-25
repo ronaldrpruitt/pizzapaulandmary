@@ -3,16 +3,15 @@ name: My Workflow
 on:
   push:
     branches: [ main ]
-
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
+    env:
+      DEPLOY_TOKEN: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Deploy branch to RRP
-      uses: ronaldrpruitt/deploy-action@v1.0.3
-      secrets: 
-        EDGIO_DEPLOY_TOKEN: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Deploy to RRP
+        uses: ronaldrpruitt/deploy-action@v1.0.3
+        env:
+          DEPLOY_TOKEN: ${{ env.DEPLOY_TOKEN }}
