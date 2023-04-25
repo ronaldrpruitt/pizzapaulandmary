@@ -11,8 +11,8 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Deploy to Edgio
-        uses: ronaldrpruitt/deploy-action@v1.0.7
+        uses: ronaldrpruitt/deploy-action@v1.0.8
         with:
-          branch-name: ${{ github.event.ref }}  # Pass the branch name as an input parameter
-          edgio-deploy-token: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
+          BRANCH_NAME: ${{ github.event.ref }}  # Pass the branch name as an input parameter
+          EDGIO_DEPLOY_TOKEN: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
 
