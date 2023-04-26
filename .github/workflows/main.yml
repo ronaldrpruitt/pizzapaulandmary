@@ -16,7 +16,7 @@ jobs:
 
       - name: Deploy to Edgio
         uses: ronaldrpruitt/deploy-action@v1.1.0
-        env:
+        with:
           deploy_token: ${{ secrets.EDGIO_DEPLOY_TOKEN }}
 
 
