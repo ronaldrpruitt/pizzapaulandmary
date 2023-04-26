@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "edgio deploy edgio-docs",
+    "deploy": "edgio deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
